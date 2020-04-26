@@ -8,13 +8,13 @@ import Title from '../Title';
 const query = graphql`
 
 {
-  allStrapiCourse {
+   allStrapiCourse(sort: {fields: id, order: DESC}) {
     nodes {
       Size
       Url
       id
       Image {
-        childImageSharp {
+        childImageSharp  {
           fluid(maxWidth:600) {
             ...GatsbyImageSharpFluid_withWebp
           }

@@ -4,7 +4,6 @@ import Courses from "../components/Courses/Courses"
 const courses = () => {
   return (
     <Layout>
-      <h3>wreraw</h3>
      <Courses>ddd</Courses>
     </Layout>
   )
