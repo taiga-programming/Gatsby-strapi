@@ -13,10 +13,10 @@ const query = graphql`
       Size
       Url
       id
-      Image {
+      image {
         childImageSharp  {
-          fluid(maxWidth:600) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth:300) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -29,15 +29,20 @@ const query = graphql`
 const Courses = () => {
   const {allStrapiCourse: {nodes:courses}} = useStaticQuery(query);
   
-  return  <section className={styles.courses}>
+  return (
 
-    <Title title="all" subtitle="courses"></Title>
+   <section className={styles.courses} >
+
+    <Title title="all" subtitle="courses"/>
     <div className={styles.center}></div>
     {
       courses.map(item => {
-        return <Course key={item.id}{...item} ></Course>
+        return (
+        <Course key={item.id}{...item} ></Course>
+        );
       })}
   </section>
+    );
 }
 
 export default Courses
