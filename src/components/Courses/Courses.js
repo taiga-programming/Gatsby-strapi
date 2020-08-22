@@ -5,6 +5,7 @@ import styles from '../../css/courses.module.css';
 import Title from '../Title';
 
 
+
 const query = graphql`
 
 {
